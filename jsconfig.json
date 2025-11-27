@@ -1,0 +1,13 @@
+{
+  "createdAt": "2025-11-27T21:32:11.190",
+  "include": [
+    "*.js",
+    "**/*.js",
+    "*.ts",
+    "**/.ts",
+    "common/*.js",
+    "import/*.js",
+    "c:\\Users\\prisc\\.vscode\\extensions\\peterdickx.live-p5-launcher-1.4.3\\p5types\\global.d.ts",
+    "c:\\Users\\prisc\\.vscode\\extensions\\peterdickx.live-p5-launcher-1.4.3\\p5types\\p5helper.d.ts"
+  ]
+}
