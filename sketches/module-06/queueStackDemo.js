@@ -2,7 +2,7 @@ let ghosts = [];
 
 function setup()
 {
-  createCanvas(windowWidth, 300);
+  createCanvas(windowWidth, 200);
   colorMode(HSB);
   textAlign(CENTER, CENTER);
   for (let i = 0; i < 12; i++)
@@ -19,7 +19,7 @@ function draw()
   {
     drawGhost(50 + i * 50, 100, ghosts[i]);
   }
-  fill(255);
+  fill("white");
   text("Press 'a' to push(), press 's' to shift()");
 }
 
@@ -41,7 +41,30 @@ function keyTyped()
     }
     else
     {
-      ghosts.push(ghosts[ghosts.length - 1]);
+      ghosts.push((ghosts[ghosts.length - 1] + 30) % 360);
     }
   }
+}
+
+function drawGhost(x, y, h) {
+    noStroke();
+    fill(h, 100, 100);
+    beginShape();
+    vertex(x - 20, y);
+    vertex(x - 20, y + 5);
+    vertex(x - 12.5, y);
+    vertex(x - 7.5, y + 5);
+    vertex(x, y);
+    vertex(x + 7.5, y + 5);
+    vertex(x + 12.5, y);
+    vertex(x + 20, y + 5);
+    vertex(x + 20, y);
+    endShape();
+    arc(x, y, 40, 80, Math.PI, Math.PI * 2);
+    fill("white");
+    circle(x - 7, y - 20, 10);
+    circle(x + 7, y - 20, 10);
+    fill("black");
+    circle(x - 7, y - 20, 5);
+    circle(x + 7, y - 20, 5);
 }
